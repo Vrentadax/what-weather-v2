@@ -92,3 +92,48 @@ let displayWeather = function (weatherData) {
 
 
 };
+
+let saveSearchHistory = function (city) {
+    if (!searchHistory.includes(city)) {
+        searchHistory.push(city);
+        $("#search-history").append("<a href='#' class='list-group-item list-group-item-action' id='" + city + "'>" + city + "</a>")
+    }
+
+    localStorage.setItem("weatherSearchHistory", JSON.stringify(searchHistory));
+
+    localStorage.setItem("lastCitySearched", JSON.stringify(lastCitySearched));
+
+    loadSearchHistory();
+};
+
+let loadSearchHistory = function () {
+    searchHistory = JSON.parse(localStorage.getItem("weatherSearchHistory"));
+    lastCitySearched = JSON.parse(localStorage.getItem("lastCitySearched"));
+
+    if (!searchHistory) {
+        searchHistory = []
+    }
+
+    if (!lastCitySearched) {
+        lastCitySearched = ""
+    }
+
+    $("#search-history").empty();
+
+    for (i = 0; i < searchHistory.length; i++) {
+
+        $("#search-history").append("<a href='#' class='list-group-item list-group-item-action' id='" + searchHistory[i] + "'>" + searchHistory[i] + "</a>");
+    }
+};
+
+loadSearchHistory();
+
+if (lastCitySearched != "") {
+    getCityWeather(lastCitySearched);
+}
+
+$("#search-form").submit(searchSubmitHandler);
+$("#search-history").on("click", function (event) {
+    let prevCity = $(event.target).closest("a").attr("id");
+    getCityWeather(prevCity);
+});
