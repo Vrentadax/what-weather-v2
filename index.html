@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>What Weather?</h1>
+    </header>
+    <main>
+        <div>
+            <div>
+
+                <div>
+
+                    <h5>Search for a City:</h5>
+                    <form class="form-inline" id="search-form">
+                        <input type="search" class="form-control" id="cityname" placeholder="Enter city name">
+                        <button type="submit">Search</button>
+                    </form>
+
+                    <ul class="list-group" id="search-history"></ul>
+
+                </div>
+
+                <div>
+
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="flex-row">
+                                <h2 class="card-title align-self-center" id="main-city-name"></h2>
+                            </div>
+                            <h6 class="card-subtitle" id="main-city-temp">Temperature: </h6>
+                            <h6 class="card-subtitle" id="main-city-humidity">Humidity: </h6>
+                            <h6 class="card-subtitle" id="main-city-wind">Wind Speed: </h6>
+                            <h6 class="card-subtitle" id="main-city-uv">UV Index: </h6>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="card-title">5-Day Forecast:</h2>
+                        <div id="five-day">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="./assets/js/dashboard.js"></script>
+</body>
+</html>
