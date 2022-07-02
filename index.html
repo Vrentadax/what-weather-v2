@@ -9,30 +9,35 @@
     <title>What Weather?</title>
 </head>
 <body>
-    
+    <!-- header -->
     <header class="bg-dark"> 
         <h1 class="p-2 text-light text-center h1">What Weather?</h1>
     </header>
 
-    <div class="m-4 p-4">
+    <!-- main -->
+    <main class="m-4 p-4">
         <div class="col-md-12">
             <div class="row">
 
+                <!-- search container -->
                 <div class="col-md-3">
 
+                    <!-- search form -->
                     <h5>Search for a City:</h5>
                     <form class="form-inline" id="search-form">
                         <input type="search" class="form-control mb-3 ds-input" id="cityname" placeholder="Enter city name">
                         <button type="submit" class="btn btn-primary mb-3"><span class="oi oi-magnifying-glass"></span></button>
                     </form>
 
-                    <ul class="list-group" id="search-history">
-                    </ul>
+                    <!-- search history -->
+                    <ul class="list-group" id="search-history"></ul>
 
                 </div>
 
+                <!-- results -->
                 <div class="col-md-9">
 
+                    <!-- weather data for city search -->
                     <div class="card mt-2">
                         <div class="card-body">
                             <div class="d-flex flex-row ">
@@ -45,6 +50,7 @@
                         </div>  
                     </div>
                     
+                    <!-- 5-day forcast -->
                     <div>
                         <h2 class="card-title mt-3">5-Day Forecast:</h2>
                         <div class="row justify-content-between" id="five-day">
@@ -54,8 +60,9 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
     
+    <!-- scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.3/dayjs.min.js"></script>
     <script src="./assets/js/script.js"></script>
